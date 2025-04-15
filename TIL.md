@@ -24,7 +24,22 @@
 
     - 저장소에 옮긴 파일을 github에 공유하는 명령어.
     - `git push origin master`
+    - `git push -u origin master`
 
   - $ git pull
-    `    - 저장소에서 옮긴 파일을 가져오는 명령어.
-    -`git pull origin master`
+    - github에서 옮긴 파일을 가져오는 명령어.
+    - `git pull origin master`
+
+## 브랜치와 병합의 개념
+
+- ### 브랜치란?
+
+  > 코드를 분리하여 관리한다.  
+  > 새로운 기능을 추가하거나 관리할 때 유용하다.
+
+- ### 브랜치 명령어
+  > - `git branch` 현재 브랜치 목록을 확인한다.
+  > - `git branch [브랜치명]` 새로운 브랜치를 만든다.
+  > - `git switch (checkout) [브랜치명]` 현재 브랜치를 변경한다.
+  > - `git switch （checkout） -b [브랜치명]` 새로운 브랜치를 만들고 변경한다.
+  > - `git merge feature/login` 기존 feature브랜치와 login 브랜치가 지금 브랜치에 병합된다.
