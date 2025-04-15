@@ -24,8 +24,7 @@
 
     - 저장소에 옮긴 파일을 github에 공유하는 명령어.
     - `git push origin master`
-    - `git push -u origin master`
-
+gi
   - $ git pull
     - github에서 옮긴 파일을 가져오는 명령어.
     - `git pull origin master`
