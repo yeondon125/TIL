@@ -22,9 +22,9 @@
 
   - $ git push
 
-    - 저장소에 옮긴 파일을 github에 공유하는 명령어.
-    - `git push origin master`
-gi
+        - 저장소에 옮긴 파일을 github에 공유하는 명령어.
+        - `git push origin master`
+
   - $ git pull
     - github에서 옮긴 파일을 가져오는 명령어.
     - `git pull origin master`
@@ -37,8 +37,36 @@ gi
   > 새로운 기능을 추가하거나 관리할 때 유용하다.
 
 - ### 브랜치 명령어
+
   > - `git branch` 현재 브랜치 목록을 확인한다.
   > - `git branch [브랜치명]` 새로운 브랜치를 만든다.
   > - `git switch (checkout) [브랜치명]` 현재 브랜치를 변경한다.
   > - `git switch （checkout） -b [브랜치명]` 새로운 브랜치를 만들고 변경한다.
   > - `git merge feature/login` 기존 feature브랜치와 login 브랜치가 지금 브랜치에 병합된다.
+
+  ## GitHub를 활용한 협업 흐름 조사
+
+  > ### 1. 공동 작업자 추가하기
+  >
+  > ### 2. 작업환경 구성하기
+  >
+  > > - `$git init projecttest`
+  > > - `$cd projecttest `
+  > > - `$git config user.name "사용자 이름" `
+  > > - `$git config user.email 메일 주소`
+  >
+  > ### 3. 원격 저장소에 첫 commit, push하기
+  >
+  > > - `$git remote add origin 복사한 원격저장소URL`
+  > > - `$vim viewtest.txt `
+  > > - `$git add . `
+  > > - `$git commit -m "viewtest"`
+  > > - `$git push -u origin master`
+  >
+  > ### 4. 공동 작업자 pc에 원격 저장소 clone
+  >
+  > > - `$git clone 원격저장소URL` (본인의 pc에 원격저장소를 clone한다.)
+  >
+  > ### 5. 첫 번째 commit이 아니라면 pull
+  >
+  > > - pull 을 진행하지 않고 push를 진행하면 코드를 작성하는 사이에 다른 팀원이 push 한 코드와 충돌이 나기 때문에 pull 을 진행 해 받아 온 후 push 를 진행한다.
