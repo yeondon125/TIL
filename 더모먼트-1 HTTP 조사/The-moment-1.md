@@ -19,7 +19,7 @@
 > - 프론트엔드와 연동하기 위한 API 개발
 >   > NodeJS (JavaScript, TypeScript) , Ruby on Rails , Python Django , Spring Boot (Java, Kotlin) 사용함
 > - 데이터 베이스
->   > - MySQL, Redis ,MongoDB, PostgreSQL
+>   > - MySQL, Redis, MongoDB, PostgreSQL
 
 ## 3. UI/UX 디자인
 
