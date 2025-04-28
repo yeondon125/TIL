@@ -130,3 +130,13 @@ body {
 **Flexbox**
 
 - 가로나 세로 한방향을 기준으로 레이아웃을 편하게 관리할 수 있는 레이아웃 기법. 수직 정렬이나 크기 조정 등에 사용된다.
+  | 속성 | 설명 | 주요 값 |
+  |------|------|---------|
+  | `display:flexbox` | Flexbox 레이아웃 시작 | `flex` |
+  | `flex-direction` | 주축 방향 설정 | `row`, `row-reverse`, `column`, `column-reverse` |
+  | `justify-content` | 주축 정렬 | `flex-start`, `center`, `flex-end`, `space-between`, `space-around`, `space-evenly` |
+  | `align-items` | 교차축 정렬 | `stretch`, `center`, `flex-start`, `flex-end`, `baseline` |
+  | `align-content` | 여러 줄 교차축 정렬 | `stretch`, `center`, `flex-start`, `flex-end`, `space-between`, `space-around` |
+  | `flex-wrap` | 줄바꿈 여부 설정 | `nowrap`, `wrap`, `wrap-reverse` |
+  | `gap` | 아이템 간격 설정 | `gap: 10px;` |
+  | `flex-grow`, `flex-shrink`, `flex-basis` | 아이템의 크기 비율 조정 | 개별 아이템에 설정 |
