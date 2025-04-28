@@ -241,3 +241,33 @@ body {
 **lex-basis**
 
 > Flex 아이템의 기본 크기를 설정함
+> 위에서 설정한 축 방향으로 크기가 증가한다
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+>   flex-basis: 100px;
+> }
+> ```
+
+**flex-grow**
+
+> 컨테이너에 공간이 남으면 얼마나 크기를 할당할 지 설정함
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+>   flex-grow: 1;
+> }
+> ```
+
+**flex-shrink**
+
+> 컨테이너에 공간이 부족하면 얼마나 크기를 줄일지 설정함
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+>   flex-shrink: 1;
+> }
+> ```
