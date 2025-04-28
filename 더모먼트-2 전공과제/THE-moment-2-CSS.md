@@ -130,13 +130,114 @@ body {
 **Flexbox**
 
 - 가로나 세로 한방향을 기준으로 레이아웃을 편하게 관리할 수 있는 레이아웃 기법. 수직 정렬이나 크기 조정 등에 사용된다.
-  | 속성 | 설명 | 주요 값 |
-  |------|------|---------|
-  | `display:flexbox` | Flexbox 레이아웃 시작 | `flex` |
-  | `flex-direction` | 주축 방향 설정 | `row`, `row-reverse`, `column`, `column-reverse` |
-  | `justify-content` | 주축 정렬 | `flex-start`, `center`, `flex-end`, `space-between`, `space-around`, `space-evenly` |
-  | `align-items` | 교차축 정렬 | `stretch`, `center`, `flex-start`, `flex-end`, `baseline` |
-  | `align-content` | 여러 줄 교차축 정렬 | `stretch`, `center`, `flex-start`, `flex-end`, `space-between`, `space-around` |
-  | `flex-wrap` | 줄바꿈 여부 설정 | `nowrap`, `wrap`, `wrap-reverse` |
-  | `gap` | 아이템 간격 설정 | `gap: 10px;` |
-  | `flex-grow`, `flex-shrink`, `flex-basis` | 아이템의 크기 비율 조정 | 개별 아이템에 설정 |
+
+**display: flexbox**
+
+> Flexbox 레이아웃 시작
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+> }
+> ```
+
+**flex-direction**
+
+> 주축 방향 설정
+>
+> - `row` : 수평 방향으로 정렬
+> - `row-reverse` : 수평 방향으로 정렬 (역순)
+> - `column` : 수직 방향으로 정렬
+> - `column-reverse` : 수직 방향으로 정렬 (역순)
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+>   flex-direction: row-reverse;
+> }
+> ```
+
+**justify-content**
+
+> 주축 정렬
+>
+> - `flex-start` : 왼쪽 정렬
+> - `center` : 가운데 정렬
+> - `flex-end` : 오른쪽 정렬
+> - `space-between` : 일정한 간격을 두고 좌우로 분포 (처음과 끝 간격 없음음)
+> - `space-around` : 일정한 간격을 두고 좌우로 분포 (처음과 끝 간격 있음)
+> - `space-evenly` : 처음과 끝 간격이 모두 동일하게 분포
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+>   justify-content: space-between;
+> }
+> ```
+
+**align-items**
+
+> 교차축 정렬
+>
+> - `stretch` : 요소의 수직 축 방향으로 쭉 늘어져 정렬
+> - `center` : 가운데 정렬
+> - `flex-start` : 아이템들을 시작점으로 정렬
+> - `flex-end` : 아이템들을 끝점으로 정렬
+> - `baseline` : 텍스트 베이스라인에 따라 정렬
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+>   align-items: center;
+> }
+> ```
+
+**align-content**
+
+> 여러 줄 교차축 정렬  
+> `flex:wrap;` `flex-direction: column;` 이 설정된 상황에서 아이템이 두줄 이상 되었을 때 사용함
+>
+> - `flex-start` : 시작점으로 정렬
+> - `flex-end` : 끝점으로 정렬
+> - `center` : 가운데 정렬
+> - `space-between` : 일정한 간격을 두고 좌우로 분포 (처음과 끝 간격 없음)
+> - `space-around` : 일정한 간격을 두고 좌우로 분포 (처음과 끝 간격 있음)
+> - `space-evenly` : 처음과 끝 간격이 모두 동일
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+>   flex-wrap: wrap;
+>   align-content: space-around;
+> }
+> ```
+
+**flex-wrap**
+
+> 줄바꿈 여부 설정
+>
+> - `flex-wrap: wrap;` : 가로로 끊어서 여러줄로 나누어 출력
+> - `flex-wrap: nowrap;` : 한줄로 출력
+> - `flex-wrap: wrap-reverse;` : 가로로 끊어서 여러줄로 나누어 출력 후 역순으로 출력
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+>   flex-wrap: wrap;
+> }
+> ```
+
+**gap**
+
+> 선택된 요소 끼리 간격을 지정함
+>
+> ```css
+> .flexbox {
+>   display: flexbox;
+>   gap: 20px;
+> }
+> ```
+
+**lex-basis**
+
+> Flex 아이템의 기본 크기를 설정함
