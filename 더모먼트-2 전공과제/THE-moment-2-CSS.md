@@ -312,3 +312,51 @@ body {
 >   grid-gap: 10px; //간격 설정
 > }
 > ```
+
+**4. grid-column / grid-row**
+
+> 각 요소가 배치되는 위치 설정  
+> `grid-column:start` : 가로 차지할 공간 시작부분 설정  
+> `grid-column-end` : 가로 차지할 공간 끝부분 설정  
+> `grid-row-start` : 세로 차지할 공간 시작부분 설정  
+> `grid-row-end` : 세로 차지할 공간 끝부분 설정
+>
+> `grid-column: 1 / 3;` : 시작, 끝부분 한번에 설정  
+>  `grid-row: 1 / 2;` : 시작 끝부분 한번에 설정
+>
+> ```css
+> .item:nth-child(1) {
+>   grid-column-start: 1;
+>   grid-column-end: 3;
+>   grid-row-start: 1;
+>   grid-row-end: 2;
+> }
+> ```
+>
+> ```css
+> .item:nth-child(1) {
+>   grid-column: 1 / 3;
+>   grid-row: 1 / 2;
+> }
+> ```
+>
+> 둘이 같은 코드임
+
+**5. justify-items / align-items**
+
+> 컨테이너 안 요소가 배치되는 위치 설정  
+> `justify-items: center;` : 가로방향 가운데 정렬  
+> `align-items: center;` : 세로방향 가운데 정렬
+>
+> ```css
+> .item {
+>   justify-items: center;
+>   align-items: center;
+> }
+> ```
+
+**6. justify-content / align-content**
+
+> 컨테이너 안 요소 높이와 넓이 크기가 컨테이너 크기보다 작을 때, 요소들을 모두 정렬하는 태그
+> `justify-content: center;` : 가로방향 가운데 정렬  
+> `align-content: center;` : 세로방향 가운데 정렬
