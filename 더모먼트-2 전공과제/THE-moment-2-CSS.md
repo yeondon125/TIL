@@ -369,3 +369,73 @@ body {
 > ```
 
 **7. grid-template-areas / grid-area**
+
+> `grid-template-areas` : 그리드 레이아웃을 이름으로 설계하는 방식
+>
+> ```css
+> .container {
+>   display: grid;
+>   grid-template-areas:
+>     "header header"
+>     "sidebar main"
+>     "footer footer";
+> }
+> ```
+
+> `grid-area` : 각 자식 요소에게 grid에서 차지할 영역 이름을 지정해주는 속성입니다.
+>
+> ```html
+> <div class="container">
+>   <div class="header">Header</div>
+>   <div class="sidebar">Sidebar</div>
+>   <div class="main">Main</div>
+>   <div class="footer">Footer</div>
+> </div>
+> ```
+>
+> ```css
+> .header {
+>   grid-area: header;
+> }
+> .sidebar {
+>   grid-area: sidebar;
+> }
+> .main {
+>   grid-area: main;
+> }
+> .footer {
+>   grid-area: footer;
+> }
+> ```
+
+- 자식 요소는 grid-area를 통해 어디에 배치될지 결정.
+
+- 부모의 grid-template-areas 값과 이름이 반드시 일치해야 합.
+
+```css
+<style>
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 60px 1fr 50px;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  height: 100vh;
+  gap: 10px;
+}
+
+.header  { grid-area: header; background: lightblue; }
+.sidebar { grid-area: sidebar; background: lightgray; }
+.main    { grid-area: main; background: white; }
+.footer  { grid-area: footer; background: lightcoral; }
+</style>
+
+<div class="container">
+  <div class="header">Header</div>
+  <div class="sidebar">Sidebar</div>
+  <div class="main">Main Content</div>
+  <div class="footer">Footer</div>
+</div>
+```
