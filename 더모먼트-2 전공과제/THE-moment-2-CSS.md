@@ -357,6 +357,15 @@ body {
 
 **6. justify-content / align-content**
 
-> 컨테이너 안 요소 높이와 넓이 크기가 컨테이너 크기보다 작을 때, 요소들을 모두 정렬하는 태그
+> 컨테이너 안 요소 높이와 넓이 크기가 컨테이너 크기보다 작을 때, 요소들을 모두 정렬하는 태그  
 > `justify-content: center;` : 가로방향 가운데 정렬  
 > `align-content: center;` : 세로방향 가운데 정렬
+>
+> ```css
+> .item {
+>   justify-content: center;
+>   align-content: center;
+> }
+> ```
+
+**7. grid-template-areas / grid-area**
