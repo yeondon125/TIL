@@ -127,11 +127,11 @@ body {
   | flex | Flexbox 레이아웃 시작 | 수평/수직 정렬 쉽게 |
   | grid | Grid 레이아웃 시작 | 복잡한 2D 레이아웃 구현 |
 
-**Flexbox**
+### flexbox
 
 - 가로나 세로 한방향을 기준으로 레이아웃을 편하게 관리할 수 있는 레이아웃 기법. 수직 정렬이나 크기 조정 등에 사용된다.
 
-**display: flexbox**
+**1. display: flexbox**
 
 > Flexbox 레이아웃 시작
 >
@@ -141,7 +141,7 @@ body {
 > }
 > ```
 
-**flex-direction**
+**2. flex-direction**
 
 > 주축 방향 설정
 >
@@ -157,7 +157,7 @@ body {
 > }
 > ```
 
-**justify-content**
+**3. justify-content**
 
 > 주축 정렬
 >
@@ -175,7 +175,7 @@ body {
 > }
 > ```
 
-**align-items**
+**4. align-items**
 
 > 교차축 정렬
 >
@@ -192,7 +192,7 @@ body {
 > }
 > ```
 
-**align-content**
+**5. align-content**
 
 > 여러 줄 교차축 정렬  
 > `flex:wrap;` `flex-direction: column;` 이 설정된 상황에서 아이템이 두줄 이상 되었을 때 사용함
@@ -212,7 +212,7 @@ body {
 > }
 > ```
 
-**flex-wrap**
+**6. flex-wrap**
 
 > 줄바꿈 여부 설정
 >
@@ -227,7 +227,7 @@ body {
 > }
 > ```
 
-**gap**
+**7. gap**
 
 > 선택된 요소 끼리 간격을 지정함
 >
@@ -238,7 +238,7 @@ body {
 > }
 > ```
 
-**lex-basis**
+**8. lex-basis**
 
 > Flex 아이템의 기본 크기를 설정함
 > 위에서 설정한 축 방향으로 크기가 증가한다
@@ -250,7 +250,7 @@ body {
 > }
 > ```
 
-**flex-grow**
+**9. flex-grow**
 
 > 컨테이너에 공간이 남으면 얼마나 크기를 할당할 지 설정함
 >
@@ -261,7 +261,7 @@ body {
 > }
 > ```
 
-**flex-shrink**
+**10. `flex-shrink**
 
 > 컨테이너에 공간이 부족하면 얼마나 크기를 줄일지 설정함
 >
@@ -269,5 +269,46 @@ body {
 > .flexbox {
 >   display: flexbox;
 >   flex-shrink: 1;
+> }
+> ```
+
+### grid
+
+가로와 세로 2차원 레이아웃을 다룰 때 사용되는 기능
+
+**1. display: grid**
+
+> gird 디스플레이 시작
+>
+> ```css
+> .grid {
+>   display: grid;
+> }
+> ```
+
+**2. grid-template-columns / grid-template-rows**
+
+> 각 요소에 대한 크기를 설정함
+>
+> ```css
+> .grid {
+>   display: grid;
+>   grid-template-columns: 100px 100px; //좌, 우 크기설정
+>   grid-template-rows: 100px 100px; //상, 하 크기설정
+> }
+> ```
+
+**3. gap (grid-gap)**
+
+> 요소 간 간격 설정  
+> `row-gap` 세로 간격 설정
+> `column-gap` 가로 간격 설정
+>
+> ```css
+> .grid {
+>   display: grid;
+>   grid-template-columns: 100px 100px; //좌, 우 크기설정
+>   grid-template-rows: 100px 100px; //상, 하 크기설정
+>   grid-gap: 10px; //간격 설정
 > }
 > ```
