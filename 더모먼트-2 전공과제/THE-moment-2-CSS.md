@@ -1,8 +1,6 @@
-# FE
+# CSS
 
-## CSS
-
-### CSS 기본 문법 및 Selector 사용법
+## CSS 기본 문법 및 Selector 사용법
 
 ```css
 선택자 {
@@ -29,7 +27,7 @@
 > - A ~ B
 >   > A 이후 모든 형제 `B	h1 ~ p { color: gray; }`
 
-### 글꼴, 색상, 배경 등 기초 스타일링
+## 글꼴, 색상, 배경 등 기초 스타일링
 
 ```css
 body {
@@ -103,7 +101,7 @@ body {
 > > 배경 이미지 크기 설정  
 > > `background-size: cover;`
 
-### Box Model 이해
+## Box Model 이해
 
 **Box Model**
 | 부분 | 설명 | 예시 CSS 속성 |
@@ -113,7 +111,7 @@ body {
 | Border | 요소의 테두리 (외곽선) | `border: 1px solid black;` |
 | Margin | 요소 바깥쪽의 공간 (다른 요소와의 거리) | `margin: 20px;` |
 
-### 레이아웃 이해
+## 레이아웃 이해
 
 **display**
 
@@ -127,7 +125,7 @@ body {
   | flex | Flexbox 레이아웃 시작 | 수평/수직 정렬 쉽게 |
   | grid | Grid 레이아웃 시작 | 복잡한 2D 레이아웃 구현 |
 
-### flexbox
+## flexbox
 
 - 가로나 세로 한방향을 기준으로 레이아웃을 편하게 관리할 수 있는 레이아웃 기법. 수직 정렬이나 크기 조정 등에 사용된다.
 
@@ -272,7 +270,7 @@ body {
 > }
 > ```
 
-### grid
+## grid
 
 가로와 세로 2차원 레이아웃을 다룰 때 사용되는 기능
 
@@ -413,7 +411,7 @@ body {
 - 부모의 grid-template-areas 값과 이름이 반드시 일치해야 합.
 
 ```css
-<style>
+
 .container {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -439,3 +437,65 @@ body {
   <div class="footer">Footer</div>
 </div>
 ```
+
+## position
+
+**1. static (기본값)**
+
+> 대부분 모든 요소 기본값이다.  
+> 그냥 배치대로 진행된다.
+
+**2. relative (상대 위치)**
+
+> 자기 자리는 유지한 상태로 설정한 값만큼 이동한다.
+>
+> ```CSS
+> div {
+>  position: relative;
+>  top: 20px;
+>  left: 10px;
+> }
+> ```
+
+**3. absolute (절대 위치)**
+
+> 자기 자리는 유지하지 않는다.  
+> 부모 요소의 위치에 따라 이동한다.
+> position이 relative, fixed, absolute 하나라도 있으면 그 부모를 기준으로 절대적으로 이동한다.
+>
+> ```css
+> .container {
+>   position: relative;
+> }
+> .child {
+>   position: absolute;
+>   top: 0;
+>   left: 0;
+> }
+> ```
+
+**4. position: fixed (고정 위치)**
+
+> 브라우저 창을 기준으로 고정한다.  
+> 스크롤을 내려도 항상 그 자리에 있다.  
+> 광고 배너, 상단 메뉴 등에 많이 사용한다.
+>
+> ```css
+> .fixed-banner {
+>   position: fixed;
+>   top: 0;
+>   left: 0;
+> }
+> ```
+
+**5. position: sticky (스크롤 시 고정)**
+
+> 스크롤을 내리다가 요소가 top: 0 위치에 도달하면 고정된다.
+> 그 전까지는 원래 위치에 있다.
+>
+> ```css
+> .sticky-title {
+>   position: sticky;
+>   top: 0;
+> }
+> ```
