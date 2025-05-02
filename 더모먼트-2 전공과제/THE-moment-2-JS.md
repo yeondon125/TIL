@@ -109,3 +109,17 @@ do {
 c언어와 같은 방식으로 사용
 
 ### 4.4 for...of 반복문
+
+```js
+const array = ["1번", "2번", "3번"];
+
+for (const element of array) {
+  console.log(element); // 배열[0] ~ 끝까지 순차적 출력
+  console.log(array); // 배열 전체 출력
+}
+```
+
+배열의 처음 값부터 끝까지 순차적으로 출력
+배열의 요소를 꺼내어 출력할 때 유용함
+
+### 4.5 for...in 반복문
