@@ -375,3 +375,118 @@ input.addEventListener("keyup", function () {
 
 > 자바스크립트에서 시간이 오래 걸리는 작업(서버 요청 등)을  
 > 멈추지 않고 처리하기 위한 방법
+> | 문법 | 설명 |
+> | ------------- | ------------------- |
+> | `fetch()` | 서버 요청 보내는 함수 |
+> | `Promise` | 미래에 결과를 처리할 수 있는 객체 |
+> | `async/await` | 비동기 코드를 깔끔하게 작성 |
+
+## 1. fetch()
+
+```js
+fetch("https://api.example.com/data")
+  .then((res) => res.json()) // 응답을 JSON으로 변환
+  .then((data) => {
+    console.log("받은 데이터:", data);
+  });
+```
+
+- fetch()는 서버에 비동기 요청을 보냄
+
+- .then()은 요청이 완료되면 실행될 코드
+
+## 2. Promise
+
+```js
+const 약속 = new Promise((resolve, reject) => {
+  // 시간이 걸리는 작업
+  const success = true;
+
+  if (success) resolve("성공!");
+  else reject("실패!");
+});
+
+약속.then((result) => {
+  console.log(result); // 성공했을 때 실행
+}).catch((error) => {
+  console.log(error); // 실패했을 때 실행
+});
+```
+
+- Promise는 미래에 결과가 생길 것을 약속함
+
+- .then()은 성공 시, .catch()는 실패 시 실행
+
+## 3. async/await
+
+```js
+async function getData() {
+  const res = await fetch("https://api.example.com/data");
+  const data = await res.json();
+  console.log(data);
+}
+
+getData();
+```
+
+- async 함수 안에서 await를 쓰면 동기처럼 보이게 코드를 작성 가능
+
+- 실제로는 비동기이지만, 기다리는 것처럼 보이게 처리
+
+# API 실습
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>API 실습</title>
+  </head>
+  <body>
+    <h1>게시글 제목 불러오기</h1>
+    <ul id="post-list"></ul>
+
+    <script>
+      // 1. fetch: 외부 API(주소)에 데이터 요청을 보냄
+      fetch("https://jsonplaceholder.typicode.com/posts")
+        // 2. 응답(response)을 JSON(자바스크립트 객체처럼 생긴 데이터)으로 변환
+        .then((res) => res.json())
+
+        // 3. 변환된 JSON 데이터를 data라는 이름으로 받아서 실행
+        .then((data) => {
+          // HTML에서 <ul id="post-list"> 요소를 찾아서 변수에 저장
+          const postList = document.getElementById("post-list");
+
+          // 4. 받아온 데이터 중 5개만 반복해서 화면에 출력
+          for (let i = 0; i < 5; i++) {
+            // <li> 요소를 새로 생성
+            const li = document.createElement("li");
+
+            // 그 <li> 안에 글 제목을 텍스트로 넣기
+            li.innerText = data[i].body;
+
+            // <ul> 안에 이 <li>를 추가해서 화면에 보이게 하기
+            postList.appendChild(li);
+          }
+        })
+
+        // 5. 에러가 발생했을 경우, 콘솔에 메시지를 출력
+        .catch((err) => {
+          console.log("에러 발생:", err);
+        });
+    </script>
+  </body>
+</html>
+```
+
+# 기초 예외 처리
+
+> 에러가 날 것 같은 코드를 안전하게 실행 하기 위해 사용
+
+```js
+try {
+  // 여기에 에러가 날 수 있는 코드를 작성
+} catch (err) {
+  // 에러가 났을 때 실행할 코드
+}
+```
