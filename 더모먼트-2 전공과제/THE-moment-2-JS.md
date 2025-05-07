@@ -1,6 +1,4 @@
-# JavaScript
-
-## JS 기본 문법
+# JS 기본 문법
 
 ## 1. 변수 선언
 
@@ -119,7 +117,183 @@ for (const element of array) {
 }
 ```
 
-배열의 처음 값부터 끝까지 순차적으로 출력
+배열의 처음 값부터 끝까지 순차적으로 출력  
 배열의 요소를 꺼내어 출력할 때 유용함
 
-### 4.5 for...in 반복문
+## 5. 함수
+
+함수 선언
+
+```js
+function 함수이름(매개변수1, 매개변수2) {
+  // 실행할 코드
+  return 결과값;
+}
+```
+
+함수 표현식
+
+```js
+const sayHi = function (name) {
+  console.log(`안녕, ${name}님`);
+};
+
+sayHi("철수"); // 출력: 안녕, 철수님
+```
+
+## 6. 배열
+
+여러 개의 값을 한 변수에 저장할 수 있는 자료형  
+순서(인덱스)가 있음 → 0부터 시작함
+
+### 배열선언
+
+```js
+let fruits = ["사과", "바나나", "포도"];
+const numbers = [1, 2, 3, 4, 5];
+```
+
+### 배열 접근
+
+```js
+console.log(fruits[0]); // "사과"
+console.log(fruits[1]); // "바나나"
+```
+
+### 배열 추가, 삭제
+
+```js
+fruits.push("오렌지"); // 맨 뒤에 추가
+fruits.pop(); // 맨 뒤에서 삭제
+
+fruits.unshift("딸기"); // 맨 앞에 추가
+fruits.shift(); // 맨 앞에서 삭제
+```
+
+### 배열 반복
+
+```js
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+## 7. 객체
+
+이름(키)과 값(value)을 쌍으로 저장하는 자료형  
+순서 없음, 대신 key로 접근함
+
+### 객체 선언
+
+```js
+const person = {
+  name: "철수",
+  age: 20,
+  isStudent: true,
+};
+```
+
+### 객체 접근
+
+```js
+console.log(person.name); // "철수"
+console.log(person["age"]); // 20
+```
+
+### 객체 추가, 삭제
+
+```js
+person.city = "서울"; // 추가
+person.age = 21; // 수정
+delete person.isStudent; // 삭제
+```
+
+### 객체 반복
+
+```js
+for (const key in person) {
+  console.log(key, person[key]);
+}
+```
+
+# DOM 선택자 및 조작
+
+HTML 문서 안에 있는 요소들(h1, p, div 등)을
+
+자바스크립트로 찾아서 바꾸는 것
+
+## 1. 요소 선택
+
+| 메서드                              | 설명                               | 예시                                      |
+| ----------------------------------- | ---------------------------------- | ----------------------------------------- |
+| `document.querySelector()`          | CSS 선택자 방식으로 1개 요소 선택  | `document.querySelector("h1")`            |
+| `document.querySelectorAll()`       | CSS 선택자 방식으로 여러 요소 선택 | `document.querySelectorAll(".item")`      |
+| `document.getElementById()`         | `id`로 요소 선택                   | `document.getElementById("title")`        |
+| `document.getElementsByClassName()` | 클래스명으로 여러 요소 선택        | `document.getElementsByClassName("item")` |
+
+```html
+<h1 id="title">안녕</h1>
+<p class="desc">내용1</p>
+<p class="desc">내용2</p>
+```
+
+```js
+const title = document.getElementById("title"); //title 변수에 title id를 가지고 있는 <h1> 태그 대입
+const firstParagraph = document.querySelector(".desc");
+const allParagraphs = document.querySelectorAll(".desc");
+```
+
+## 2. 요소 조작
+
+### 2.1 택스트, html 변경경
+
+| 속성        | 설명                     | 예시                                 |
+| ----------- | ------------------------ | ------------------------------------ |
+| `innerText` | 요소의 **텍스트만** 변경 | `title.innerText = "반가워!"`        |
+| `innerHTML` | HTML 태그 포함해서 변경  | `title.innerHTML = "<i>반가워!</i>"` |
+
+```js
+title.innerText = "제목 바뀜"; // 텍스트만 바뀜
+title.innerHTML = "<b>굵게 바뀜</b>"; // 태그까지 적용됨
+```
+
+### 2.2 css 스타일 변경
+
+```js
+title.style.color = "red";
+title.style.fontSize = "30px";
+```
+
+### 2.3 클래스 조작
+
+```js
+title.classList.add("active"); // 클래스 추가
+title.classList.remove("active"); // 클래스 제거
+title.classList.toggle("active"); // 있으면 제거, 없으면 추가
+```
+
+## 3. 이벤트 연결
+
+```js
+const button = document.querySelector("button");
+
+button.addEventListener("click", function () {
+  alert("버튼 클릭됨!");
+});
+```
+
+브라우저에서 클릭 했는지 안했는지 판단하고  
+만약 클릭 했다면 아래 코드가 실행됨
+
+# 이벤트 처리 (addEventListener, 클릭/입력 이벤트)
+
+사용자의 동작(클릭, 입력 등)에 반응하는 코드  
+자바스크립트에서 이벤트를 감지하고, 처리할 수 있음
+
+## addEventListener
+
+`요소.addEventListener("이벤트이름", 함수)` : 해당 이벤트가 발생하면 함수를 실행
