@@ -297,3 +297,81 @@ button.addEventListener("click", function () {
 ## addEventListener
 
 `요소.addEventListener("이벤트이름", 함수)` : 해당 이벤트가 발생하면 함수를 실행
+
+```js
+const btn = document.querySelector("button");
+
+btn.addEventListener("click", function () {
+  console.log("버튼 클릭됨!");
+});
+```
+
+## 클릭 이벤트
+
+```html
+<button id="btn">눌러봐!</button>
+
+<script>
+  const btn = document.getElementById("btn");
+
+  btn.addEventListener("click", function () {
+    alert("버튼이 클릭됨!");
+  });
+</script>
+```
+
+## 입력 이벤트 (input, change, keyup, keydown)
+
+| 이벤트 이름 | 설명                           | 예시 대상       |
+| ----------- | ------------------------------ | --------------- |
+| `click`     | 클릭할 때                      | 버튼, 링크 등   |
+| `input`     | 입력 값이 바뀔 때              | input, textarea |
+| `change`    | 값이 변경되고 포커스 벗어날 때 | input, select   |
+| `submit`    | 폼 전송될 때                   | form            |
+| `mouseover` | 마우스가 올라갔을 때           | 모든 요소       |
+| `keydown`   | 키보드 키 눌렸을 때            | input           |
+
+### input
+
+> 입력 필드에 글자가 변할 때마다 실행
+
+```html
+<input type="text" id="name" placeholder="이름 입력" />
+
+<script>
+  const input = document.getElementById("name");
+
+  input.addEventListener("input", function () {
+    console.log("입력값:", input.value);
+  });
+</script>
+```
+
+### change
+
+> 입력을 완료하고 포커스가 벗어났을 때 실행됨
+
+```js
+input.addEventListener("change", function () {
+  console.log("최종 입력값:", input.value);
+});
+```
+
+### keyup / keydown
+
+> 키보드를 눌렀을 때 실행됨
+
+```js
+input.addEventListener("keydown", function () {
+  console.log("키 눌림");
+});
+
+input.addEventListener("keyup", function () {
+  console.log("키 뗌");
+});
+```
+
+# 비동기 개념 소개
+
+> 자바스크립트에서 시간이 오래 걸리는 작업(서버 요청 등)을  
+> 멈추지 않고 처리하기 위한 방법
