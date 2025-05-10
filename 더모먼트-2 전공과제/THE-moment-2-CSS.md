@@ -111,6 +111,8 @@ body {
 | Border | 요소의 테두리 (외곽선) | `border: 1px solid black;` |
 | Margin | 요소 바깥쪽의 공간 (다른 요소와의 거리) | `margin: 20px;` |
 
+![alt text](image.png)
+
 ## 레이아웃 이해
 
 **display**
@@ -259,7 +261,7 @@ body {
 > }
 > ```
 
-**10. `flex-shrink**
+**10. flex-shrink**
 
 > 컨테이너에 공간이 부족하면 얼마나 크기를 줄일지 설정함
 >
@@ -444,6 +446,8 @@ body {
 
 > 대부분 모든 요소 기본값이다.  
 > 그냥 배치대로 진행된다.
+>
+> ![alt text](image-1.png)
 
 **2. relative (상대 위치)**
 
@@ -456,6 +460,8 @@ body {
 >  left: 10px;
 > }
 > ```
+
+![alt text](image-2.png)
 
 **3. absolute (절대 위치)**
 
