@@ -8,7 +8,10 @@
 >
 > `const` : 변경 불가능한 변수
 >
-> `var` : 사용하지 않는 것이 좋음
+> `var` :  
+> 함수 스코프(전역변수) 이다.  
+>  같은 이름으로 중복 선언이 가능하다.  
+>  위 이유 때문에 사용하지 않는 것이 좋음
 >
 > ```js
 > let a = 10;
@@ -26,9 +29,9 @@
 > 브라우저 콘솔창이나 터미널에 출력됨
 >
 > ```js
-> let name = 철수;
+> let name = "철수";
 > console.log(name + "는 남자다.");
-> console.log("${name} + 는 남자다.");
+> console.log(`${name} + 는 남자다.`);
 > console.log("남자의 이름은? ", name);
 > ```
 >
@@ -489,4 +492,21 @@ try {
 } catch (err) {
   // 에러가 났을 때 실행할 코드
 }
+```
+
+```js
+function divide(a, b) {
+  try {
+    if (b === 0) {
+      throw new Error("0으로 나눌 수 없습니다!");
+    }
+    console.log("결과:", a / b);
+  } catch (e) {
+    console.error("오류 발생:", e.message);
+  } finally {
+    console.log("연산 시도 완료");
+  }
+}
+
+divide(10, 0);
 ```
